@@ -4,11 +4,24 @@
  *
  * @author Administrador, @date 20/12/16 10:28
  */
+import java.util.Date;
 
 public class Movie {
 	String nombre;
 	boolean isRented;
+	Date fecha_retorno;
+	Date fecha_renta;
     public boolean isRentableTo(Customer cliente){
     	return true;
+    }
+    public void rentar(Date fecha_renta, Date fecha_retorno )
+    {
+    	this.fecha_renta = fecha_renta;
+    	this.fecha_retorno = fecha_retorno;
+    	this.isRented = true;
+    }
+    public void devolver()
+    {
+    	isRented=false;
     }
 }

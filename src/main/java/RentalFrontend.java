@@ -9,9 +9,9 @@ public class RentalFrontend {
 	{
 		this.reservationService = reservationService;
 	}
-	public boolean isRentable(Movie movie, Customer customer, Date date)
+	public boolean isRentable(Movie movie, Customer customer, Date fecha_renta, Date fecha_retorno)
 	{
-		return movie.isRentableTo(customer) && reservationService.isRentableUntil(movie, date); 
+		return movie.isRentableTo(customer) && reservationService.isRentableUntil(movie, fecha_renta, fecha_retorno); 
 	}
 
 }
