@@ -8,5 +8,4 @@ public class Customer {
 		}
 		return false;
 	}
-
 }
