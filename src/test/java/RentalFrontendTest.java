@@ -1,6 +1,4 @@
-
 import static org.mockito.Mockito.*;
-
 import java.sql.Date;
 import org.junit.Rule;
 import org.junit.Test;
@@ -9,18 +7,18 @@ import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
 
 
-public class ReservationServiceTest2 {
+public class RentalFrontendTest {
 	@Rule 
 	public MockitoRule mockitoRule = MockitoJUnit.rule();
 	@Test
 	 public void test()  {
 		Date date1 = Mockito.mock(Date.class);
 		Date date2 = Mockito.mock(Date.class);
-		Movie pelicula  = spy(new Movie());
-		pelicula.rentar(date1, date2);
-		ReservationService rs= Mockito.mock(ReservationService.class);
-		rs.isRentableUntil(pelicula, date1, date2);
-		verify(rs, atLeastOnce()).isRentableUntil(pelicula, date1, date2);
+		Movie pelicula  = Mockito.mock(Movie.class);
+		Customer cliente = Mockito.mock(Customer.class);
+		RentalFrontend rf = Mockito.mock(RentalFrontend.class);
+		rf.isRentable(pelicula, cliente, date1, date2);
+		verify(rf, atLeastOnce()).isRentable(pelicula, cliente, date1, date2);
 	 }
 
 }
